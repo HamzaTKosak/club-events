@@ -21,7 +21,10 @@
     <h1>Register for an event</h1>
     <p class="intro">Fill in the form to save your seat.</p>
 
-    <form>
+    <!-- shown after the form is sent (see .message:target in style.css) -->
+    <p id="registered" class="message">Your registration has been created.</p>
+
+    <form action="#registered">
       <label for="name">Full name</label>
       <input id="name" name="name" type="text" required>
 

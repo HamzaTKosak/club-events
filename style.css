@@ -177,6 +177,22 @@ select {
   font: inherit;
 }
 
+/* hidden at first, visible when the URL ends with #registered */
+.message {
+  display: none;
+  max-width: 600px;
+  padding: 12px 16px;
+  border: 1px solid #1e7a3c;
+  border-radius: 6px;
+  background: #e6f4ea;
+  color: #14532d;
+  font-weight: bold;
+}
+
+.message:target {
+  display: block;
+}
+
 form button {
   margin-top: 24px;
   padding: 12px 28px;
