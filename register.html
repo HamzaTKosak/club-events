@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Register for a student club event.">
+  <title>Club Events - Register</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header>
+    <a class="logo" href="index.html">Club Events</a>
+    <nav aria-label="Main menu">
+      <a href="index.html">Events</a>
+      <a href="index.html#about">About</a>
+      <a href="register.html" aria-current="page">Join</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <h1>Register for an event</h1>
+    <p class="intro">Fill in the form to save your seat. Fields with * are required.</p>
+
+    <!-- For now the form only opens thanks.html. In Week 5 it will send a POST request to our Express server. -->
+    <form action="thanks.html" method="get">
+      <label for="name">Full name *</label>
+      <input id="name" name="name" type="text" autocomplete="name" required>
+
+      <label for="email">Email *</label>
+      <input id="email" name="email" type="email" autocomplete="email" required>
+
+      <label for="student-number">Student number *</label>
+      <input id="student-number" name="studentNumber" type="text" inputmode="numeric" pattern="[0-9]{9}" required aria-describedby="student-number-help">
+      <p class="help" id="student-number-help">9 digits, you can find it on your student card.</p>
+
+      <label for="event">Event *</label>
+      <select id="event" name="event" required>
+        <option value="">-- Choose an event --</option>
+        <option value="robotics">Robotics Workshop (Oct 23)</option>
+        <option value="cv">CV Writing Workshop (Oct 26)</option>
+        <option value="concert">Republic Day Concert (Oct 29)</option>
+        <option value="photo">Photography Walk (Oct 31)</option>
+        <option value="hackathon">Hackathon Info Session (Nov 3)</option>
+        <option value="games">Board Game Night (Nov 5)</option>
+      </select>
+
+      <label for="seats">Number of seats *</label>
+      <input id="seats" name="seats" type="number" min="1" max="5" value="1" required aria-describedby="seats-help">
+      <p class="help" id="seats-help">You can take 1 to 5 seats.</p>
+
+      <label for="notes">Notes (optional)</label>
+      <textarea id="notes" name="notes" rows="4"></textarea>
+
+      <p class="checkbox">
+        <input id="rules" name="rules" type="checkbox" required>
+        <label for="rules">I accept the club rules *</label>
+      </p>
+
+      <button type="submit">Register</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>Team: Hamza Talha Koşak, Enes Kaan Duran, Bedirhan Bayır</p>
+    <p>MIS 457 · Fall 2026</p>
+  </footer>
+</body>
+</html>
