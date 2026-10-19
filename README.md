@@ -54,9 +54,3 @@ Home page:
 Register page:
 
 ![Lighthouse register page](docs/lighthouse-register.png)
-
-## Next weeks
-
-- Week 3: JavaScript and the DOM
-- Week 5: Node.js + Express backend (the form will send a POST request)
-- Week 6: PostgreSQL database
