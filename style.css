@@ -241,3 +241,19 @@ footer p {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+/* ---------- Week 4: search and status messages ---------- */
+#search {
+  max-width: 400px;
+  margin-bottom: 8px;
+}
+
+.status {
+  min-height: 1.5em;
+  color: var(--gray);
+}
+
+.status.error {
+  color: #b42318;
+  font-weight: bold;
+}
