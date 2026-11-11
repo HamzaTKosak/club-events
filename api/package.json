@@ -1,0 +1,17 @@
+{
+  "name": "club-events-api",
+  "version": "1.0.0",
+  "description": "REST API for the Club Events project (MIS 457 Week 5)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "type": "commonjs",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.3.0"
+  },
+  "author": "Hamza Talha Koşak, Enes Kaan Duran, Bedirhan Bayır",
+  "license": "ISC"
+}
