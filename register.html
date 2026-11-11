@@ -35,14 +35,9 @@
       <p id="email-error" class="error"></p>
 
       <label for="event">Event</label>
+      <!-- register.js adds the events from the API -->
       <select id="event" name="event" required aria-describedby="event-error">
         <option value="">-- Choose an event --</option>
-        <option value="1">Robotics Workshop (Oct 23)</option>
-        <option value="2">CV Writing Workshop (Oct 26)</option>
-        <option value="3">Republic Day Concert (Oct 29)</option>
-        <option value="4">Photography Walk (Oct 31)</option>
-        <option value="5">Hackathon Info Session (Nov 3)</option>
-        <option value="6">Board Game Night (Nov 5)</option>
       </select>
       <p id="event-error" class="error"></p>
 
@@ -51,6 +46,8 @@
       <p id="seats-error" class="error"></p>
 
       <button type="submit">Register</button>
+      <!-- errors from the server, for example "Could not connect" -->
+      <p id="form-error" class="error" role="alert"></p>
     </form>
   </main>
 

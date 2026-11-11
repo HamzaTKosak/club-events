@@ -1,6 +1,8 @@
-// Club Events - MIS 457 Week 4
-// The events are in data.json. We load them with fetch and async/await.
-// The page shows four states: loading, success, empty and error.
+// Club Events - MIS 457
+// Week 4: load the events with fetch and async/await, show four states.
+// Week 5: the events come from our own API (api/server.js), not data.json.
+
+const API_URL = "http://localhost:3000/api/events";
 
 const list = document.querySelector("#event-list");
 const statusText = document.querySelector("#status");
@@ -14,7 +16,17 @@ function showStatus(message, isError = false) {
   statusText.classList.toggle("error", isError);
 }
 
-// Make one card for each event (same HTML as the old cards in index.html)
+// "2026-11-20" and "14:00" -> "Fri, Nov 20 · 14:00"
+function formatDate(date, time) {
+  const day = new Date(date + "T" + time).toLocaleDateString("en-US", {
+    weekday: "short",
+    month: "short",
+    day: "numeric"
+  });
+  return day + " · " + time;
+}
+
+// Make one card for each event
 function render(items) {
   list.innerHTML = "";
 
@@ -27,8 +39,8 @@ function render(items) {
     const date = document.createElement("p");
     date.className = "date";
     const time = document.createElement("time");
-    time.dateTime = event.datetime;
-    time.textContent = event.dateText;
+    time.dateTime = event.date + "T" + event.time;
+    time.textContent = formatDate(event.date, event.time);
     date.append(time);
 
     const place = document.createElement("p");
@@ -53,7 +65,7 @@ async function loadEvents() {
   showStatus("Loading events...");
 
   try {
-    const response = await fetch("data.json");
+    const response = await fetch(API_URL);
 
     // fetch does not go to catch for 404, so we check it here
     if (!response.ok) {
